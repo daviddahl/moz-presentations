@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<head>
+<title>From Web Developer to Firefox Hacker: Details</title>
+</head>
+<body>
+<a name="objdir"/>
+<p>
+<h2>What is an objdir?</h2>
+<p>An objdir build refers to the process of creating the output files in a different place than where the source lives. This is a standard feature of most configure-based projects. It allows you to build for multiple configurations, including multiple platforms if you use a network filesystem, from a single source tree. It also avoids tainting your source tree so that you know that the files in your tree have not been modified by the build process.
+</p>
+<p>
+If you run configure by hand, you can use the standard method of creating an empty directory any place on the disk, changing to that directory and running /path/to/mozilla/configure from there.
+</p>
+<pre>
+    mkdir obj-debug
+    cd obj-debug
+    ../mozilla/configure
+</pre>
+<p>If you use client.mk to build, you can add the following to your mozconfig file:
+</p>
+<pre>
+    mk_add_options MOZ_OBJDIR=/path/to/objdir
+</pre>
+</p>
+
+<a name="keymodules"/>
+<p>
+<h2>Key JavaScript Modules</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en/XPCOMUtils.jsm">XPCOMUtils</a>: A bunch of utilities for creating getters, XPCOM component helpers</li>
+<li><a href="https://developer.mozilla.org/en/JavaScript_code_modules/Services.jsm">Services.jsm</a>: The kitchen sink of Gecko services and components you will use</li>
+
+</p>
+
+</body>

@@ -1,0 +1,9 @@
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj-@CONFIG_GUESS@-debug
+mk_add_options MOZ_MAKE_FLAGS=-j8
+ac_add_options --enable-application=browser
+mk_add_options MOZ_CO_PROJECT=browser
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+ac_add_options --disable-static
+ac_add_options --enable-shared
+ac_add_options --enable-tests
